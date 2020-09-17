@@ -1,11 +1,12 @@
 # 一些常用开发库
 
 android_socket
+
+
 安卓的 tcp 通信库,用法参考：
 
-private static NettyTcpClient mNettyTcpClient;
-
 ```
+private static NettyTcpClient mNettyTcpClient;
 mNettyTcpClient = new NettyTcpClient.Builder()
                             .setHost("xx.xxx.xx.xxx")    //设置服务端地址
                             .setTcpPort(xxxx) //设置服务端端口号
