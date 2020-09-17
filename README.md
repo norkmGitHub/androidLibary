@@ -1,28 +1,34 @@
-# Ò»Ğ©³£ÓÃ¿ª·¢¿â
+# ä¸€äº›å¸¸ç”¨å¼€å‘åº“
 
 android_socket
-°²×¿µÄ tcp Í¨ĞÅ¿â,ÓÃ·¨²Î¿¼£º
+å®‰å“çš„ tcp é€šä¿¡åº“,ç”¨æ³•å‚è€ƒï¼š
 
 private static NettyTcpClient mNettyTcpClient;
 
+```
 mNettyTcpClient = new NettyTcpClient.Builder()
-                            .setHost("xx.xxx.xx.xxx")    //ÉèÖÃ·şÎñ¶ËµØÖ·
-                            .setTcpPort(xxxx) //ÉèÖÃ·şÎñ¶Ë¶Ë¿ÚºÅ
-                            .setMaxReconnectTimes(-1)    //ÉèÖÃ×î´óÖØÁ¬´ÎÊı -1Ê±ÎŞÏŞÖØÁ¬
-                            .setReconnectIntervalTime(5000)    //ÉèÖÃÖØÁ¬¼ä¸ôÊ±¼ä¡£µ¥Î» ºÁÃë
-                            .setSendheartBeat(true) //ÉèÖÃÊÇ·ñ·¢ËÍĞÄÌø
-                            .setHeartBeatInterval(50) //ÉèÖÃĞÄÌø¼ä¸ôÊ±¼ä¡£µ¥Î»£ºÃë
-                            .setHeartBeatData(new byte[]{0x03, 0x0F, (byte) 0xFE, 0x05, 0x04, 0x0A}) //ÉèÖÃĞÄÌøÊı¾İ£¬¿ÉÒÔÊÇStringÀàĞÍ£¬Ò²¿ÉÒÔÊÇbyte[]
-                            .setIndex(0)    //ÉèÖÃ¿Í»§¶Ë±êÊ¶.(ÒòÎª¿ÉÄÜ´æÔÚ¶à¸ötcpÁ¬½Ó)
+                            .setHost("xx.xxx.xx.xxx")    //è®¾ç½®æœåŠ¡ç«¯åœ°å€
+                            .setTcpPort(xxxx) //è®¾ç½®æœåŠ¡ç«¯ç«¯å£å·
+                            .setMaxReconnectTimes(-1)    //è®¾ç½®æœ€å¤§é‡è¿æ¬¡æ•° -1æ—¶æ— é™é‡è¿
+                            .setReconnectIntervalTime(5000)    //è®¾ç½®é‡è¿é—´éš”æ—¶é—´ã€‚å•ä½ æ¯«ç§’
+                            .setSendheartBeat(true) //è®¾ç½®æ˜¯å¦å‘é€å¿ƒè·³
+                            .setHeartBeatInterval(50) //è®¾ç½®å¿ƒè·³é—´éš”æ—¶é—´ã€‚å•ä½ï¼šç§’
+                            .setHeartBeatData(new byte[]{0x03, 0x0F, (byte) 0xFE, 0x05, 0x04, 0x0A}) //è®¾ç½®å¿ƒè·³æ•°æ®ï¼Œå¯ä»¥æ˜¯Stringç±»å‹ï¼Œä¹Ÿå¯ä»¥æ˜¯byte[]
+                            .setIndex(0)    //è®¾ç½®å®¢æˆ·ç«¯æ ‡è¯†.(å› ä¸ºå¯èƒ½å­˜åœ¨å¤šä¸ªtcpè¿æ¥)
                             .build();
+```
 
-
-//	ÉèÖÃ¼àÌı
+```
+//	è®¾ç½®ç›‘å¬
 mNettyTcpClient.setListener(nettyClientListener);
+```
 
-//	Á¬½Ó·şÎñÆ÷
+```
+//	è¿æ¥æœåŠ¡å™¨
 mNettyTcpClient.connect();
+```
 
-
-//	·¢ËÍÊı¾İ
+```
+//	å‘é€æ•°æ®
 boolean ret = mNettyTcpClient.sendMsgToServer(b.getBytes());
+```
